@@ -127,3 +127,7 @@ a {
 .hero-text {
   font-family: 'Arima', system-ui;
 }
+
+.boldonhover:hover {
+  font-weight: bold;
+}

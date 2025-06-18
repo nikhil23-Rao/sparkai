@@ -1,0 +1,250 @@
+export const content = [
+  // Module 1
+  {
+    type: "video",
+    module: 1,
+    videoTitle: "What is Artificial Intelligence? (with visual examples)",
+    audience: "All ages",
+    duration: "1 hour",
+    objective: "Build foundational curiosity and understanding of what AI is.",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 1,
+    videoTitle: "History of AI: from calculators to ChatGPT",
+    audience: "All ages",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 1,
+    videoTitle: "Introduction to LLMs: 'AI that understands words'",
+    audience: "All ages",
+    topicType: "topic",
+  },
+  {
+    type: "activity",
+    module: 1,
+    videoTitle: "Activity: Interactive game: 'Can AI guess what I'm thinking?' using a chatbot.",
+    audience: "All ages",
+    topicType: "activity",
+  },
+
+  // Module 2
+  {
+    type: "video",
+    module: 2,
+    videoTitle: "What is a model?",
+    audience: "Middle and High School (simplified parallel track for Elementary)",
+    duration: "1.5 hours",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 2,
+    videoTitle: "Tokens, training data, and predictions",
+    audience: "Middle and High School (simplified parallel track for Elementary)",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 2,
+    videoTitle: "Neural networks (simplified)",
+    audience: "Middle and High School (simplified parallel track for Elementary)",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 2,
+    videoTitle: "Why LLMs sometimes get things wrong",
+    audience: "Middle and High School (simplified parallel track for Elementary)",
+    topicType: "topic",
+  },
+  {
+    type: "activity",
+    module: 2,
+    videoTitle: "Activity: Use a block-based demo (like Teachable Machine) to simulate token prediction.",
+    audience: "Middle and High School (simplified parallel track for Elementary)",
+    topicType: "activity",
+  },
+
+  // Module 3
+  {
+    type: "video",
+    module: 3,
+    videoTitle: "What is an API?",
+    audience: "Middle and High School",
+    duration: "1 hour",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 3,
+    videoTitle: "Overview of OpenAI, Claude, Google Gemini, HuggingFace",
+    audience: "Middle and High School",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 3,
+    videoTitle: "How to make a simple API call",
+    audience: "Middle and High School",
+    topicType: "topic",
+  },
+  {
+    type: "activity",
+    module: 3,
+    videoTitle: "Activity: Run a prompt via the OpenAI Playground or HuggingFace's inference widgets.",
+    audience: "Middle and High School",
+    topicType: "activity",
+  },
+
+  // Module 4
+  {
+    type: "video",
+    module: 4,
+    videoTitle: "What is a prompt?",
+    audience: "All ages (adjusted by depth)",
+    duration: "1 hour",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 4,
+    videoTitle: "How to write better prompts",
+    audience: "All ages (adjusted by depth)",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 4,
+    videoTitle: "Temperature, max tokens, and other parameters",
+    audience: "All ages (adjusted by depth)",
+    topicType: "topic",
+  },
+  {
+    type: "activity",
+    module: 4,
+    videoTitle: "Activity: Prompt tuning game: Who can get the LLM to make the best joke, poem, or riddle?",
+    audience: "All ages (adjusted by depth)",
+    topicType: "activity",
+  },
+
+  // Module 5
+  {
+    type: "video",
+    module: 5,
+    videoTitle: "Use cases: summarization, chatbots, translation, tutoring, games",
+    audience: "Middle and High School",
+    duration: "2 hours",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 5,
+    videoTitle: "Intro to HTML + JS or Python for AI apps",
+    audience: "Middle and High School",
+    topicType: "topic",
+  },
+  {
+    type: "project",
+    module: 5,
+    videoTitle: "Project: Chatbot using OpenAI API + HTML",
+    audience: "Middle and High School",
+    topicType: "project",
+  },
+  {
+    type: "project",
+    module: 5,
+    videoTitle: "Project: AI story generator or math tutor",
+    audience: "Middle and High School",
+    topicType: "project",
+  },
+
+  // Module 6
+  {
+    type: "video",
+    module: 6,
+    videoTitle: "Can AI lie?",
+    audience: "All ages",
+    duration: "0.5 hour",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 6,
+    videoTitle: "Bias in AI and fairness",
+    audience: "All ages",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 6,
+    videoTitle: "Safe and responsible use of AI tools",
+    audience: "All ages",
+    topicType: "topic",
+  },
+  {
+    type: "activity",
+    module: 6,
+    videoTitle: "Activity: Group discussion: Should AI do your homework?",
+    audience: "All ages",
+    topicType: "activity",
+  },
+
+  // Module 7
+  {
+    type: "video",
+    module: 7,
+    videoTitle: "Using AI to make art, music, and stories",
+    audience: "All ages",
+    duration: "1 hour",
+    topicType: "topic",
+  },
+  {
+    type: "video",
+    module: 7,
+    videoTitle: "Image generation (DALL·E, Craiyon)",
+    audience: "All ages",
+    topicType: "topic",
+  },
+  {
+    type: "project",
+    module: 7,
+    videoTitle: "Project: Create a story with images using ChatGPT + DALL·E",
+    audience: "All ages",
+    topicType: "project",
+  },
+  {
+    type: "project",
+    module: 7,
+    videoTitle: "Project: AI comic strip or podcast idea generator",
+    audience: "All ages",
+    topicType: "project",
+  },
+
+  // Module 8
+  {
+    type: "project",
+    module: 8,
+    videoTitle: "Final Project: Build a mini AI tutor or helper app",
+    audience: "Middle and High School",
+    duration: "2–3 hours",
+    topicType: "project",
+  },
+  {
+    type: "project",
+    module: 8,
+    videoTitle: "Final Project: Create an AI-powered blog post writer",
+    audience: "Middle and High School",
+    topicType: "project",
+  },
+  {
+    type: "project",
+    module: 8,
+    videoTitle: "Final Project: Design a chatbot that teaches math/Spanish/music",
+    audience: "Middle and High School",
+    topicType: "project",
+  },
+];

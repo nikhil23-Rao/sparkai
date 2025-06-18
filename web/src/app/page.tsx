@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./page.module.css";
 import "./globals.css";
+import Link from "next/link";
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
@@ -72,9 +73,9 @@ export default function Home() {
             Experience personalized learning that adapts to your pace and goals
           </p>
           <div className={styles.heroButtons}>
-            <a href="#get-started" className={styles.primaryButton}>
+            <Link href="/main" className={styles.primaryButton}>
               Start Your Journey
-            </a>
+            </Link>
             <a href="#learn-more" className={styles.secondaryButton}>
               Assign Lessons
             </a>
