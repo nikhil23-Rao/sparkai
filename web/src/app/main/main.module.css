@@ -445,6 +445,20 @@ font-family: 'GFS Neohellenic', sans-serif;
   font-weight: 900;
 }
 
+.watchedModuleLink {
+  background: #eafbe7 !important;
+  color: #2e7d32 !important;
+  border: 2px solid #6ee7b7 !important;
+  font-weight: 700;
+}
+
+.watchedModuleLink:hover,
+.watchedModuleLink:focus {
+  background: #d1fadf !important;
+  color: #176b2c !important;
+  border: 2px solid #34d399 !important;
+}
+
 .moduleIcon {
   color: #D97656;
   font-size: 1.1rem;

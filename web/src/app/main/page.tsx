@@ -21,6 +21,9 @@ import { useRouter } from "next/navigation";
 
 export default function MainPage() {
   const [url, setUrl] = useState("");
+  const [watchedSlug, setWatchedSlug] = useState("");
+  const [isEditingName, setIsEditingName] = useState(false);
+  const [profileName, setProfileName] = useState("Learner");
   const router = useRouter();
 
   useEffect(() => {
@@ -35,8 +38,19 @@ export default function MainPage() {
       setUrl(localStorage.getItem("avatar")!);
     }
   }, []);
+  useEffect(() => {
+    if (typeof window.localStorage !== "undefined") {
+      setWatchedSlug(localStorage.getItem("lastvideowatched")!);
+      if (
+        localStorage.getItem("profilename") &&
+        localStorage.getItem("profilename")!.length > 0
+      ) {
+        setProfileName(localStorage.getItem("profilename")!);
+      }
+    }
+  }, [typeof window]);
   // Example watched state for each video (replace with real data as needed)
-  const watched = [true, false, true, false, false];
+  // const watched = [true, false, true, false, false];
 
   // Group content by module
   const modules = content.reduce((acc, item, idx) => {
@@ -52,6 +66,20 @@ export default function MainPage() {
     if (item.type === "project") return faCogs;
     return faBookOpen;
   };
+
+  // Calculate videos watched based on watchedSlug
+  const watchedIdx = content.findIndex(
+    (c) =>
+      c.videoTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") === watchedSlug
+  );
+  const videosWatched =
+    watchedIdx === -1
+      ? 0
+      : content.slice(0, watchedIdx + 1).filter((c) => c.type === "video")
+          .length;
 
   return (
     <div className={styles.mainLayout}>
@@ -70,37 +98,64 @@ export default function MainPage() {
                   flexDirection: "column",
                 }}
               >
-                {items.map((item, i) => (
-                  <li key={item.videoTitle} style={{ padding: 7 }}>
-                    <button
-                      className={styles.moduleLink}
-                      style={{
-                        background: "none",
-                        border: "none",
-                        width: "100%",
-                        textAlign: "left",
-                        cursor: "pointer",
-                      }}
-                      onClick={() =>
-                        router.push(
-                          `/video/${encodeURIComponent(
-                            item.videoTitle
-                              .toLowerCase()
-                              .replace(/[^a-z0-9]+/g, "-")
-                              .replace(/^-+|-+$/g, "")
-                          )}`
-                        )
-                      }
-                    >
-                      <FontAwesomeIcon
-                        style={{ width: 20 }}
-                        icon={getSidebarIcon(item)}
-                        className={styles.moduleIcon}
-                      />
-                      {item.videoTitle}
-                    </button>
-                  </li>
-                ))}
+                {items.map((item, i) => {
+                  const slug = item.videoTitle
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-+|-+$/g, "");
+                  // Find index in flat content array
+                  const flatIdx = content.findIndex(
+                    (c) =>
+                      c.videoTitle
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "") === slug
+                  );
+                  const watchedIdx = content.findIndex(
+                    (c) =>
+                      c.videoTitle
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "") === watchedSlug
+                  );
+                  const isWatched =
+                    watchedSlug &&
+                    watchedIdx !== -1 &&
+                    flatIdx !== -1 &&
+                    flatIdx <= watchedIdx;
+
+                  return (
+                    <li key={item.videoTitle} style={{ padding: 7 }}>
+                      <button
+                        className={[
+                          styles.moduleLink,
+                          isWatched ? styles.watchedModuleLink : "",
+                        ].join(" ")}
+                        style={{
+                          background: "none",
+                          border: "none",
+                          width: "100%",
+                          textAlign: "left",
+                          cursor: "pointer",
+                          padding: 10,
+                        }}
+                        onClick={() =>
+                          router.push(`/video/${encodeURIComponent(slug)}`)
+                        }
+                      >
+                        <FontAwesomeIcon
+                          style={{
+                            width: 20,
+                            color: isWatched ? "#2e7d32" : undefined,
+                          }}
+                          icon={getSidebarIcon(item)}
+                          className={styles.moduleIcon}
+                        />
+                        {item.videoTitle}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -120,7 +175,9 @@ export default function MainPage() {
         </div>
         <div className={styles.banner}>
           <div className={styles.bannerWave}></div>
-          <div className={styles.bannerText}>Welcome back, Nikhil!</div>
+          <div className={styles.bannerText}>
+            Welcome back, {profileName.split(" ")[0]}!
+          </div>
           <div className={styles.bannerSubtext}>
             Ready to continue your AI journey? Explore new lessons, projects,
             and achievements below.
@@ -134,9 +191,28 @@ export default function MainPage() {
             <div className={styles.continueCard}>
               <div>
                 <div className={styles.lessonTitle}>
-                  Lesson 5: Introduction to LLMs
+                  {
+                    // Show the next unwatched video, or "All videos complete!" if done
+                    (() => {
+                      const watchedIdx = content.findIndex(
+                        (c) =>
+                          c.videoTitle
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, "-")
+                            .replace(/^-+|-+$/g, "") === watchedSlug
+                      );
+                      const nextVideo = content
+                        .slice(watchedIdx + 1)
+                        .find((c) => c.type === "video");
+                      if (nextVideo) {
+                        return `Module ${nextVideo.module}: ${nextVideo.videoTitle}`;
+                      }
+                      // If all videos watched, show a message
+                      return "All videos complete!";
+                    })()
+                  }
                 </div>
-                <div className={styles.lessonProgress}>Progress: 65%</div>
+                {/* Progress text removed */}
               </div>
               <button className={styles.continueButton}>Resume</button>
             </div>
@@ -196,9 +272,14 @@ export default function MainPage() {
               position: "absolute",
               top: 20,
               right: 40,
+              cursor: "pointer",
+              fontSize: 18,
+              color: "#d97656",
             }}
+            onClick={() => setIsEditingName((v) => !v)}
+            title="Edit name"
           >
-            edit{" "}
+            Edit
           </h1>
           <br />
           <br />
@@ -208,8 +289,39 @@ export default function MainPage() {
               alt="Profile"
               className={styles.profileAvatar}
             />
-            <div className={styles.profileName}>Nikhil Rao</div>
-            <div className={styles.profileUsername}>@nikhilrao</div>
+            {isEditingName ? (
+              <input
+                className={styles.profileName}
+                style={{
+                  fontSize: "1.35rem",
+                  fontWeight: 700,
+                  color: "#d97656",
+                  textAlign: "center",
+                  border: "1px solid #e7c3b0",
+                  borderRadius: "0.5rem",
+                  padding: "0.2rem 0.5rem",
+                  marginBottom: 4,
+                  width: "100%",
+                  background: "#fff7f2",
+                }}
+                value={profileName}
+                maxLength={23}
+                onChange={(e) => setProfileName(e.target.value)}
+                onBlur={() => {
+                  localStorage.setItem("profilename", profileName);
+                  setIsEditingName(false);
+                }}
+                autoFocus
+              />
+            ) : (
+              <div
+                className={styles.profileName}
+                style={{ cursor: "pointer" }}
+                onClick={() => setIsEditingName(true)}
+              >
+                {profileName}
+              </div>
+            )}
           </div>
           <div className={styles.profileStats}>
             <div>
@@ -222,11 +334,7 @@ export default function MainPage() {
             </div>
             <div>
               <span className={styles.profileStatLabel}>Videos Watched</span>
-              <div className={styles.profileStatValue}>24</div>
-            </div>
-            <div>
-              <span className={styles.profileStatLabel}>Projects Made</span>
-              <div className={styles.profileStatValue}>5</div>
+              <div className={styles.profileStatValue}>{videosWatched}</div>
             </div>
           </div>
         </div>

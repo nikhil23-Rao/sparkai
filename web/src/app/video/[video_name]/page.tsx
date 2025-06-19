@@ -10,10 +10,18 @@ import {
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function VideoPage() {
+  const [watchedSlug, setWatchedSlug] = useState("");
   const params = useParams();
   const videoName = params?.video_name as string;
+
+  useEffect(() => {
+    if (typeof window.localStorage !== "undefined") {
+      setWatchedSlug(localStorage.getItem("lastvideowatched")!);
+    }
+  }, [typeof window]);
 
   // Find the content item by slugified title
   const item = content.find(
@@ -65,18 +73,45 @@ export default function VideoPage() {
                     .replace(/[^a-z0-9]+/g, "-")
                     .replace(/^-+|-+$/g, "");
                   const isActive = slug === videoName;
+                  // Highlight as watched if slug is <= lastvideowatched in content order
+
+                  // Find index in flat content array
+                  const flatIdx = content.findIndex(
+                    (c) =>
+                      c.videoTitle
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "") === slug
+                  );
+                  const watchedIdx = content.findIndex(
+                    (c) =>
+                      c.videoTitle
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "") === watchedSlug
+                  );
+                  const isWatched =
+                    watchedSlug &&
+                    watchedIdx !== -1 &&
+                    flatIdx !== -1 &&
+                    flatIdx <= watchedIdx;
+
                   return (
                     <li key={sidebarItem.videoTitle} style={{ padding: 7 }}>
                       <a
-                        className={
-                          isActive
-                            ? `${styles.moduleLink} ${styles.activeModuleLink}`
-                            : styles.moduleLink
-                        }
+                        className={[
+                          styles.moduleLink,
+                          isActive ? styles.activeModuleLink : "",
+                          isWatched ? styles.watchedModuleLink : "",
+                        ].join(" ")}
+                        style={{ padding: 10 }}
                         href={`/video/${encodeURIComponent(slug)}`}
                       >
                         <FontAwesomeIcon
-                          style={{ width: 20 }}
+                          style={{
+                            width: 20,
+                            color: isWatched ? "#2e7d32" : undefined,
+                          }}
                           icon={getSidebarIcon(sidebarItem)}
                           className={styles.moduleIcon}
                         />
@@ -113,13 +148,32 @@ export default function VideoPage() {
                     .replace(/^-+|-+$/g, "") === videoName
               );
               const nextItem = content[currentIdx + 1];
+              const watchedIdx = content.findIndex(
+                (c) =>
+                  c.videoTitle
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-+|-+$/g, "") === watchedSlug
+              );
               if (nextItem) {
                 const nextSlug = nextItem.videoTitle
                   .toLowerCase()
                   .replace(/[^a-z0-9]+/g, "-")
                   .replace(/^-+|-+$/g, "");
+                // Only update localStorage if currentIdx >= watchedIdx
                 return (
                   <Link
+                    onClick={() => {
+                      if (watchedIdx === -1 || currentIdx >= watchedIdx) {
+                        localStorage.setItem(
+                          "lastvideowatched",
+                          content[currentIdx].videoTitle
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, "-")
+                            .replace(/^-+|-+$/g, "")
+                        );
+                      }
+                    }}
                     href={`/video/${encodeURIComponent(nextSlug)}`}
                     className={styles.nextButton}
                     style={{
