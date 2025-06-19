@@ -88,7 +88,10 @@ export default function MainPage() {
         </nav>
         {/* ...add navigation or course list here... */}
       </aside>
-      <main className={styles.introScreen}>
+      <main
+        className={styles.introScreen}
+        style={{ overflowY: "scroll", height: "100vh" }}
+      >
         <div className={styles.searchBarWrapper}>
           <input
             className={styles.searchBar}
@@ -119,58 +122,18 @@ export default function MainPage() {
               <button className={styles.continueButton}>Resume</button>
             </div>
             <section className={styles.detailsSection}>
-              <div className={styles.detailCard}>
-                <FontAwesomeIcon
-                  style={{
-                    width: 70,
-
-                    marginBottom: 5,
-                    borderRadius: 100,
-                    padding: 10,
-                  }}
-                  icon={faRobot}
-                  className={styles.detailIcon}
-                />
-                <div className={styles.detailText}>
-                  Upcoming Project
-                  <div className={styles.detailSubtext}>
-                    Build a chatbot. Due in 3 days.
-                  </div>
-                </div>
-              </div>
-              <div className={styles.detailCard}>
-                <FontAwesomeIcon
-                  style={{
-                    width: 70,
-
-                    marginBottom: 5,
-                    borderRadius: 100,
-                    padding: 10,
-                  }}
-                  icon={faVideo}
-                  className={styles.detailIcon}
-                />
-                <div className={styles.detailText}>
-                  Next Video
-                  <div className={styles.detailSubtext}>Fine-tuning LLMs</div>
-                </div>
-              </div>
-              <div className={styles.detailCard}>
-                <FontAwesomeIcon
-                  style={{
-                    width: 70,
-                    marginBottom: 5,
-                    borderRadius: 100,
-                    padding: 10,
-                  }}
-                  icon={faMedal}
-                />
-                <div className={styles.detailText}>
-                  Achievement
-                  <div className={styles.detailSubtext}>
-                    🏆 Prompt Engineering Basics
-                  </div>
-                </div>
+              <div className={styles.dailyChallengeCard}>
+                <h3 className={styles.dailyChallengeTitle}>Daily Challenge</h3>
+                <p className={styles.dailyChallengeDesc}>
+                  Can you prompt an LLM to write a poem about space in exactly 5
+                  lines? Try your best and share your result!
+                </p>
+                <button
+                  className={styles.dailyChallengeButton}
+                  onClick={() => alert("Opening today's challenge...")}
+                >
+                  Open Challenge
+                </button>
               </div>
             </section>
           </section>
