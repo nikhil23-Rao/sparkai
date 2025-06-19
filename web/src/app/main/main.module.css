@@ -9,7 +9,7 @@
 .sidebarLeft,
 .sidebarRight {
   flex: 0 0 320px;
-  background: #fff7f2;
+  background: #fff;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -22,14 +22,14 @@
 
 .sidebarLeft {
   border-right: 1px solid #f0e0d7;
-  background: #fff7f2;
+  background: #fff;
   box-shadow: 0 0 16px 0 rgba(217, 118, 86, 0.06);
 }
 
 .sidebarRight {
   flex: 0 0 320px;
   min-width: 220px;
-  background: #fff7f2;
+  background: #fff;
   padding: 2.5rem 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -54,14 +54,14 @@
   align-items: center;
   justify-content: flex-start;
   padding: 3rem 2rem;
-  background: linear-gradient(180deg, #ffe5d1 0%, #fbf9f4 60%);
+  background: linear-gradient(180deg, #fff 0%, #fbf9f4 60%);
   min-width: 0;
 }
 
 .banner {
   width: 100%;
   max-width: 1100px;
-  background: linear-gradient(90deg, #ffe5d1 0%, #fbf9f4 100%);
+  background: linear-gradient(90deg, #fff 0%, #fbf9f4 100%);
   border-radius: 2rem;
   padding: 3.2rem 2rem 2.5rem 2rem;
   margin-bottom: 2.5rem;
@@ -110,7 +110,7 @@
 }
 
 .continueCard {
-  background: #fff7f2;
+  background: #fff;
   border-radius: 1.2rem;
   padding: 1.5rem 2rem;
   display: flex;
@@ -130,7 +130,7 @@
 .lessonTitle {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #222;
+  color: #d97656;
   margin-bottom: 0.3rem;
 }
 
@@ -352,7 +352,7 @@ font-family: 'GFS Neohellenic', sans-serif;
 }
 
 .fillerCard {
-  background: #fff7f2;
+  background: #fff;
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px 0 rgba(217, 118, 86, 0.07);
   padding: 2rem 1.5rem;
@@ -525,7 +525,7 @@ font-family: 'GFS Neohellenic', sans-serif;
 }
 
 .dailyChallengeCard {
-  background: #fff7f2;
+  background: #fff;
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px 0 rgba(217, 118, 86, 0.07);
   padding: 1.5rem 2rem;
@@ -548,7 +548,7 @@ font-family: 'GFS Neohellenic', sans-serif;
   box-shadow: 0 6px 32px 0 rgba(217, 118, 86, 0.18);
   border: 2px solid #d97656;
   transform: translateY(-6px) scale(1.025);
-  background: #fff;
+  background: #f7fafd;
 }
 
 .dailyChallengeTitle {
@@ -590,7 +590,7 @@ font-family: 'GFS Neohellenic', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5e3d7;
+  background: #fff;
   border-radius: 1.2rem;
   box-shadow: 0 2px 16px 0 rgba(217, 118, 86, 0.10);
   padding: 2rem 1rem;
@@ -615,10 +615,15 @@ font-family: 'GFS Neohellenic', sans-serif;
   gap: 0.5rem;
   margin: 2rem 0 1.2rem 0;
   justify-content: center;
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 4px 0 rgba(217, 118, 86, 0.03);
 }
 
 .suggestedBubble {
-  background: #fff7f2;
+  background: #f7fafd;
   color: #d97656;
   border: 1.5px solid #f0e0d7;
   border-radius: 2rem;
@@ -632,14 +637,13 @@ font-family: 'GFS Neohellenic', sans-serif;
 }
 
 .suggestedBubble:hover {
-  background: #ffe5d1;
+  background: #fff;
   color: #c56548;
   border-color: #ffd7b3;
 }
 
 .chatboxContainer {
-  width: 100%;
-  background: #fff7f2;
+  background: #fff;
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px 0 rgba(217, 118, 86, 0.07);
   padding: 1.2rem 1rem 1rem 1rem;
@@ -714,6 +718,7 @@ font-family: 'GFS Neohellenic', sans-serif;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s;
+  font-family: 'GFS Neohellenic', sans-serif;
 }
 
 .chatboxSend:hover {

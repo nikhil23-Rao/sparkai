@@ -213,15 +213,10 @@ export default function VideoPage() {
             alignItems: "center",
             justifyContent: "center",
             display: "flex",
+            boxShadow: "none",
           }}
         >
-          <form
-            className={styles.chatboxInputRow}
-            onSubmit={(e) => {
-              e.preventDefault();
-              // handle send
-            }}
-          >
+          <form>
             <button className={styles.chatboxSend} type="submit">
               Open New Chat
             </button>
