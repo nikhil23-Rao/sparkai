@@ -156,6 +156,25 @@ font-family: 'GFS Neohellenic', sans-serif;
   background: #c56548;
 }
 
+.nextButton {
+  background: #d97656;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 2.1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(217, 118, 86, 0.08);
+  display: inline-block;
+}
+
+.nextButton:hover {
+  background: #c56548;
+  text-decoration: underline;
+}
+
 .detailsSection {
   width: 100%;
   max-width: 900px;
@@ -394,6 +413,7 @@ font-family: 'GFS Neohellenic', sans-serif;
 }
 
 .moduleLink {
+    font-family: 'GFS Neohellenic', sans-serif;
   display: flex;
   align-items: center;
   color: #c56548;
@@ -410,8 +430,12 @@ font-family: 'GFS Neohellenic', sans-serif;
   position: relative;
 }
 
-
-
+.activeModuleLink {
+  background: #fbeee7;
+  color: #d97656 !important;
+  font-weight: 900;
+  border: 2px solid #d97656;
+}
 
 .moduleLink:hover,
 .moduleLink:focus {
@@ -556,6 +580,143 @@ font-family: 'GFS Neohellenic', sans-serif;
 }
 
 .dailyChallengeButton:hover {
+  background: #c56548;
+}
+
+.videoPlayerWrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5e3d7;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(217, 118, 86, 0.10);
+  padding: 2rem 1rem;
+}
+
+.videoPlayer {
+  width: 100%;
+  max-width: 860px;
+  min-width: 320px;
+  min-height: 420px;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  background: #000;
+  outline: none;
+  box-shadow: 0 2px 8px 0 rgba(217, 118, 86, 0.08);
+  display: block;
+}
+
+.suggestedBubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 1.2rem 0;
+  justify-content: center;
+}
+
+.suggestedBubble {
+  background: #fff7f2;
+  color: #d97656;
+  border: 1.5px solid #f0e0d7;
+  border-radius: 2rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  margin-bottom: 0.2rem;
+  font-family: 'GFS Neohellenic', sans-serif;
+}
+
+.suggestedBubble:hover {
+  background: #ffe5d1;
+  color: #c56548;
+  border-color: #ffd7b3;
+}
+
+.chatboxContainer {
+  width: 100%;
+  background: #fff7f2;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(217, 118, 86, 0.07);
+  padding: 1.2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  min-height: 180px;
+  max-width: 320px;
+}
+
+.chatboxMessages {
+  flex: 1;
+  min-height: 48px;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chatMessage {
+  padding: 0.7rem 1.1rem;
+  border-radius: 1.2rem;
+  font-size: 1rem;
+  max-width: 90%;
+  word-break: break-word;
+  background: #fbeee7;
+  color: #c56548;
+  align-self: flex-end;
+  box-shadow: 0 1px 4px 0 rgba(217, 118, 86, 0.04);
+}
+
+.chatMessageAI {
+  background: #e8f0fa;
+  color: #2563eb;
+  align-self: flex-start;
+}
+
+.chatboxInputRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.chatboxInput {
+  flex: 1;
+  border: 1.5px solid #e7c3b0;
+  border-radius: 2rem;
+  padding: 0.7rem 1.1rem;
+  font-size: 1rem;
+  background: #fff;
+  color: #d97656;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.chatboxInput:focus {
+  border: 1.5px solid #d97656;
+}
+
+.chatboxSend {
+  background: #d97656;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chatboxSend:hover {
   background: #c56548;
 }
 

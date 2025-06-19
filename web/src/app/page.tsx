@@ -60,7 +60,7 @@ export default function Home() {
             tailored to all
           </div>
           <h1 className={styles.heroTitle}>
-            AI & LLM's <br />
+            AI & LLMs <br />
             Made <span className={styles.accent}>Easy...</span>
           </h1>
           <p

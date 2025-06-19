@@ -17,9 +17,12 @@ import { content } from "../../data/content";
 import { createAvatar } from "@dicebear/core";
 import { bigEars } from "@dicebear/collection";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function MainPage() {
   const [url, setUrl] = useState("");
+  const router = useRouter();
+
   useEffect(() => {
     if (!localStorage.getItem("avatar")) {
       const avatar = createAvatar(bigEars, {
@@ -69,9 +72,25 @@ export default function MainPage() {
               >
                 {items.map((item, i) => (
                   <li key={item.videoTitle} style={{ padding: 7 }}>
-                    <a
+                    <button
                       className={styles.moduleLink}
-                      href={`#video${item.idx + 1}`}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        width: "100%",
+                        textAlign: "left",
+                        cursor: "pointer",
+                      }}
+                      onClick={() =>
+                        router.push(
+                          `/video/${encodeURIComponent(
+                            item.videoTitle
+                              .toLowerCase()
+                              .replace(/[^a-z0-9]+/g, "-")
+                              .replace(/^-+|-+$/g, "")
+                          )}`
+                        )
+                      }
                     >
                       <FontAwesomeIcon
                         style={{ width: 20 }}
@@ -79,7 +98,7 @@ export default function MainPage() {
                         className={styles.moduleIcon}
                       />
                       {item.videoTitle}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
