@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import styles from "./page.module.css";
 import "./globals.css";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
@@ -28,9 +29,15 @@ export default function Home() {
       }
     };
   }, []);
+  useEffect(() => {
+    document.title = "New Tab Name";
+  }, [typeof document]);
 
   return (
     <>
+      <Head>
+        <title>Learn AI & LLMS</title>
+      </Head>
       <div style={{ overflowY: "scroll", height: "100vh" }}>
         <nav className={styles.navbar}>
           <div className={styles.logoContainer}>
