@@ -10,10 +10,27 @@ import {
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import PromptTuner from "@/app/components/PromptTuner";
+import SentencePredictor from "@/app/components/SentencePredictor";
+
+import AITruthTest from "@/app/components/GuessActivity";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default function VideoPage() {
   const [watchedSlug, setWatchedSlug] = useState("");
+  const [chatMessages, setChatMessages] = useState<
+    { role: "user" | "assistant"; content: string }[]
+  >([
+    {
+      role: "assistant",
+      content: "Hey! Let me know if you need help with anything",
+    } as any,
+  ]);
+  const [chatInput, setChatInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const chatEndRef = useRef<HTMLDivElement>(null);
   const params = useParams();
   const videoName = params?.video_name as string;
 
@@ -22,6 +39,12 @@ export default function VideoPage() {
       setWatchedSlug(localStorage.getItem("lastvideowatched")!);
     }
   }, [typeof window]);
+
+  // // Scroll to bottom on new message
+  // useEffect(() => {
+  //   if (chatEndRef.current)
+  //     chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+  // }, [chatMessages]);
 
   // Find the content item by slugified title
   const item = content.find(
@@ -46,6 +69,94 @@ export default function VideoPage() {
     if (item.type === "project") return faCogs;
     return faBookOpen;
   };
+
+  // Gemini API call
+  async function sendToGemini(
+    updatedMessages: { role: "user" | "assistant"; content: string }[]
+  ) {
+    console.log("API KEY:", process.env.NEXT_PUBLIC_API_KEY);
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_API_KEY!);
+    try {
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" });
+
+      // Prepare the context by including the system prompt as the first assistant message
+      const context = [
+        {
+          role: "assistant",
+          parts: [
+            {
+              text: `You are an assistant that provides assistance to elementary and middle school students
+               based on the following video transcript. You help give quizzes, visualizations, examples, etc. on the current topic. You are extremely nice, and conversational. You act like a teacher. This is an Intro TO AI course. You are an AI assistant/teacher of the site.
+            
+              Return all your answers with markdown, and also keep your answers VERY SHORT, and bullet points mostly. For Quizzes and make it nicely formatted in markdown (choices: A, B, C, D); Give space between each question and also give a NEW line for each answer choice. For multiple choice questions, give each answer choice in its own new line.
+
+               video transcript: ${item?.transcript}
+               
+              `,
+            },
+          ],
+        },
+        ...updatedMessages.map((msg) => ({
+          role: msg.role,
+          parts: [{ text: msg.content }],
+        })),
+      ];
+
+      const result = await model.generateContent({ contents: context } as any);
+
+      const text = result.response.candidates
+        ? result.response.candidates[0].content.parts[0].text
+        : "Sorry, I couldn't generate a response.";
+      console.log("TEXT", text);
+      setChatMessages(
+        (msgs) => [...msgs, { role: "assistant", content: text }] as any
+      );
+    } catch (error) {
+      console.log("Something Went Wrong");
+      console.log(error);
+      setChatMessages((msgs) => [
+        ...msgs,
+        { role: "assistant", content: "Sorry, there was an error." },
+      ]);
+    }
+  }
+
+  // Handle chat submit
+  async function handleChatSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!chatInput.trim()) return;
+    const userMsg = { role: "user", content: chatInput.trim() };
+    const updatedMessages = [...chatMessages, userMsg]; // Include the latest user message
+    setChatMessages(updatedMessages as any);
+    setLoading(true);
+    try {
+      await sendToGemini(updatedMessages as any); // Pass the updated messages to the function
+    } catch (err) {
+      setChatMessages((msgs) => [
+        ...msgs,
+        { role: "assistant", content: "Sorry, there was an error." },
+      ]);
+    }
+    setChatInput("");
+    setLoading(false);
+  }
+
+  // Find the index of the current item in the content array
+  const currentIdx = content.findIndex(
+    (c) =>
+      c.videoTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") === videoName
+  );
+  const nextItem = content[currentIdx + 1];
+  const watchedIdx = content.findIndex(
+    (c) =>
+      c.videoTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") === watchedSlug
+  );
 
   return (
     <div className={styles.mainLayout}>
@@ -211,13 +322,7 @@ export default function VideoPage() {
                 <b>Audience:</b> {item.audience}
               </div>
             )}
-            {item.duration && (
-              <div
-                style={{ fontSize: 16, marginBottom: 8, textAlign: "center" }}
-              >
-                <b>Duration:</b> {item.duration}
-              </div>
-            )}
+
             {item.objective && (
               <div
                 style={{ fontSize: 16, marginBottom: 8, textAlign: "center" }}
@@ -225,41 +330,95 @@ export default function VideoPage() {
                 <b>Objective:</b> {item.objective}
               </div>
             )}
-            <div className={styles.videoPlayerWrapper}>
-              <video
-                className={styles.videoPlayer}
-                src="/testscreenrecord.mp4"
-                controls
-                poster="/video-poster.png"
+
+            {item.type === "activity" && (
+              <div
+                style={{
+                  margin: "32px 0",
+                  background: "#fff",
+                  borderRadius: 12,
+                  padding: 24,
+                  boxShadow: "0 2px 12px 0 rgba(217, 118, 86, 0.07)",
+                }}
               >
-                Your browser does not support the video tag.
-              </video>
-            </div>
+                {/* <ReactMarkdown>{item.markdown}</ReactMarkdown> */}
+                {item.module == 1 ? (
+                  <div className="markdown-content">
+                    <ReactMarkdown>{item.markdown}</ReactMarkdown>
+                  </div>
+                ) : item.module == 2 ? (
+                  <SentencePredictor></SentencePredictor>
+                ) : item.module == 4 ? (
+                  <AITruthTest></AITruthTest>
+                ) : item.module == 3 ? (
+                  <PromptTuner></PromptTuner>
+                ) : (
+                  <div className="markdown-content">
+                    <ReactMarkdown>{item.markdown}</ReactMarkdown>
+                  </div>
+                )}
+              </div>
+            )}
+            {item.type === "video" && (
+              <div className={styles.videoPlayerWrapper}>
+                <video
+                  className={styles.videoPlayer}
+                  src={item.url}
+                  controls
+                  poster="/video-poster.png"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
           </div>
         ) : (
           <div style={{ padding: 40, fontSize: 24 }}>Video not found.</div>
         )}
       </main>
       <aside className={styles.sidebarRight}>
-        <img
-          src="/logo.png"
-          style={{ width: 140, border: "2px solid #FEE6D4", borderRadius: 100 }}
-          alt=""
-        />
-        <h1 style={{ marginTop: 20 }}>Hey, Nikhil!</h1>
-        <p style={{ color: "gray", maxWidth: "70%", textAlign: "center" }}>
-          let me know if you need help on this topic.
-        </p>
-        <div className={styles.suggestedBubbles}>
-          <button className={styles.suggestedBubble}>
-            Help me visualize this
-          </button>
-          <button className={styles.suggestedBubble}>
-            Give me a quiz on this
-          </button>
-          <button className={styles.suggestedBubble}>
-            Summarize the key points
-          </button>
+        <div
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            flexDirection: "column",
+            height: 400,
+          }}
+        >
+          <img
+            src="/logo.png"
+            style={{
+              width: 140,
+              border: "2px solid #FEE6D4",
+              borderRadius: 100,
+            }}
+            alt=""
+          />
+          <h1 style={{ marginTop: 20 }}>Spark AI Assistant</h1>
+          <p style={{ color: "gray", maxWidth: "70%", textAlign: "center" }}>
+            Ask Spark anything about this topic, or try a suggested prompt!
+          </p>
+          <div className={styles.suggestedBubbles}>
+            <button
+              className={styles.suggestedBubble}
+              onClick={() => setChatInput("Help me visualize this")}
+            >
+              Help me visualize this
+            </button>
+            <button
+              className={styles.suggestedBubble}
+              onClick={() => setChatInput("Give me a quiz on this")}
+            >
+              Give me a quiz on this
+            </button>
+            <button
+              className={styles.suggestedBubble}
+              onClick={() => setChatInput("Summarize the key points")}
+            >
+              Summarize the key points
+            </button>
+          </div>
         </div>
         <div
           className={styles.chatboxContainer}
@@ -268,11 +427,50 @@ export default function VideoPage() {
             justifyContent: "center",
             display: "flex",
             boxShadow: "none",
+            flexDirection: "column",
+            width: "100%",
           }}
         >
-          <form>
-            <button className={styles.chatboxSend} type="submit">
-              Open New Chat
+          <div className={styles.chatboxMessages} style={{ width: "100%" }}>
+            {chatMessages.map((msg, i) => (
+              <div
+                key={i}
+                className={
+                  "markdown-content " + msg.role === "user"
+                    ? styles.chatMessage
+                    : [styles.chatMessage, styles.chatMessageAI].join(" ")
+                }
+                style={{
+                  alignSelf: msg.role === "user" ? "flex-end" : "flex-start",
+                  background: msg.role === "user" ? "#fbeee7" : "#e8f0fa",
+                  color: msg.role === "user" ? "#c56548" : "#2563eb",
+                  padding: 15,
+                }}
+              >
+                <ReactMarkdown>{msg.content}</ReactMarkdown>
+              </div>
+            ))}
+            <div ref={chatEndRef} />
+          </div>
+          <form
+            className={styles.chatboxInputRow}
+            style={{ width: "100%" }}
+            onSubmit={handleChatSubmit}
+          >
+            <input
+              className={styles.chatboxInput}
+              type="text"
+              value={chatInput}
+              onChange={(e) => setChatInput(e.target.value)}
+              placeholder="Type your question..."
+              disabled={loading}
+            />
+            <button
+              className={styles.chatboxSend}
+              type="submit"
+              disabled={loading || !chatInput.trim()}
+            >
+              {loading ? "..." : "Send"}
             </button>
           </form>
         </div>

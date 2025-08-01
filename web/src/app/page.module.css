@@ -242,8 +242,111 @@
   border: 1px solid rgba(217, 118, 86, 0.2);
 }
 
+.featuresSection {
+  padding: 4rem 2rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.featuresContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.featureCard {
+  max-width: 300px;
+  background: #f9f9f9;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.featureDescription {
+  font-size: 1rem;
+  color: #666;
+}
+
+.teamSection {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.teamMember {
+  max-width: 300px;
+  text-align: center;
+}
+
+.teamImage {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.teamName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.teamRole {
+  font-size: 1rem;
+  color: #666;
+}
+
+.teamDescription {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+.footer {
+  padding: 2rem;
+  background: #D97656;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;
+  }
+  .featuresContainer,
+  .teamContainer {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }

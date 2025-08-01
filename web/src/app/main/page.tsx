@@ -166,13 +166,7 @@ export default function MainPage() {
         className={styles.introScreen}
         style={{ overflowY: "scroll", height: "100vh" }}
       >
-        <div className={styles.searchBarWrapper}>
-          <input
-            className={styles.searchBar}
-            type="text"
-            placeholder="Search courses, lessons, or resources..."
-          />
-        </div>
+        <div className={styles.searchBarWrapper}></div>
         <div className={styles.banner}>
           <div className={styles.bannerWave}></div>
           <div className={styles.bannerText}>
@@ -214,20 +208,70 @@ export default function MainPage() {
                 </div>
                 {/* Progress text removed */}
               </div>
-              <button className={styles.continueButton}>Resume</button>
+              {(() => {
+                const watchedIdx = content.findIndex(
+                  (c) =>
+                    c.videoTitle
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "-")
+                      .replace(/^-+|-+$/g, "") === watchedSlug
+                );
+                const nextVideo = content
+                  .slice(watchedIdx + 1)
+                  .find((c) => c.type === "video");
+                if (nextVideo) {
+                  const nextSlug = nextVideo.videoTitle
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-+|-+$/g, "");
+                  return (
+                    <button
+                      className={styles.continueButton}
+                      onClick={() =>
+                        router.push(`/video/${encodeURIComponent(nextSlug)}`)
+                      }
+                    >
+                      Resume
+                    </button>
+                  );
+                }
+                return (
+                  <button className={styles.continueButton} disabled>
+                    Resume
+                  </button>
+                );
+              })()}
             </div>
             <section className={styles.detailsSection}>
               <div className={styles.dailyChallengeCard}>
-                <h3 className={styles.dailyChallengeTitle}>Daily Challenge</h3>
+                <h3 className={styles.dailyChallengeTitle}>
+                  Follow us on Social Media!
+                </h3>
                 <p className={styles.dailyChallengeDesc}>
-                  Can you prompt an LLM to write a poem about space in exactly 5
-                  lines? Try your best and share your result!
+                  Support our mission to spread AI and LLM education by dropping
+                  a follow!
                 </p>
                 <button
                   className={styles.dailyChallengeButton}
-                  onClick={() => alert("Opening today's challenge...")}
+                  onClick={() => {
+                    const watchedIdx = content.findIndex(
+                      (c) =>
+                        c.videoTitle
+                          .toLowerCase()
+                          .replace(/[^a-z0-9]+/g, "-")
+                          .replace(/^-+|-+$/g, "") === watchedSlug
+                    );
+                    const nextVideo = content
+                      .slice(watchedIdx + 1)
+                      .find((c) => c.type === "video");
+                    const nextSlug = nextVideo?.videoTitle
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "-")
+                      .replace(/^-+|-+$/g, "");
+                    router.push(`/video/${encodeURIComponent(nextSlug!)}`);
+                  }}
                 >
-                  Open Challenge
+                  Follow
                 </button>
               </div>
             </section>
@@ -244,6 +288,23 @@ export default function MainPage() {
                 href="#"
                 className={styles.continueButton}
                 style={{ display: "inline-block", marginTop: "1rem" }}
+                onClick={() => {
+                  const watchedIdx = content.findIndex(
+                    (c) =>
+                      c.videoTitle
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "") === watchedSlug
+                  );
+                  const nextVideo = content
+                    .slice(watchedIdx + 1)
+                    .find((c) => c.type === "video");
+                  const nextSlug = nextVideo?.videoTitle
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-+|-+$/g, "");
+                  router.push(`/video/${encodeURIComponent(nextSlug!)}`);
+                }}
               >
                 Chat with Spark
               </a>
@@ -255,7 +316,7 @@ export default function MainPage() {
                 Q&amp;A, or mentorship.
               </p>
               <a
-                href="#"
+                href="mailto:nikhil23.rao@gmail.com"
                 className={styles.continueButton}
                 style={{ display: "inline-block", marginTop: "1rem" }}
               >
@@ -339,10 +400,7 @@ export default function MainPage() {
           </div>
         </div>
         <div className={styles.aiCircleContainer} style={{ marginTop: "20%" }}>
-          <button
-            className={styles.aiCircleButton}
-            onClick={() => alert("Spark AI coming soon!")}
-          >
+          <button className={styles.aiCircleButton}>
             <img src="/logo.png" className={styles.aiCircleLogo} />
             <div className={styles.aiCircleLabel}>Spark AI</div>
           </button>

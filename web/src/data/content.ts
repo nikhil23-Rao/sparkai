@@ -5,9 +5,11 @@ export const content = [
     module: 1,
     videoTitle: "What is Artificial Intelligence? (with visual examples)",
     audience: "All ages",
-    duration: "1 hour",
     objective: "Build foundational curiosity and understanding of what AI is.",
     topicType: "topic",
+    transcript:
+      "Artificial intelligence or AI means a computer or a machine that can do things that usually need human thinking, like learning, solving problems, or making decisions. Humans can recognize faces, play games, and understand language. AI tries to do those things too, but using math, data, and code. When you ask Siri, Alexa, or Google a question, that's AI using language skills to understand you and respond. In video games, AI controls the characters or cars that you play against. They use rules and learning to play better. AI can recognize faces in photos or tell you what's in a picture, like dog, mountain, or pizza. AI learns by looking at tons of data. For example, to recognize a cat, it studies thousands of cat pictures. AI doesn't really think like people. It follows patterns and uses code. It doesn't have feelings or common sense. AI is used in self-driving cars, robots and factories, and even chatbots to help answer questions online. Learning about AI is important because it's changing how we live, work, and learn. And you can help build its future. To sum up, AI helps machines do smart things by learning from tons of data, finding patterns, and following rules. It's like giving computers a tiny bit of brain power. Now that you know what AI is, what would you like to build with it?",
+    url: "/video0.mp4",
   },
   {
     type: "video",
@@ -15,6 +17,8 @@ export const content = [
     videoTitle: "History of AI: from calculators to ChatGPT",
     audience: "All ages",
     topicType: "topic",
+    transcript: `We discussed in the last video how artificial intelligence or AI means making computers think and learn like humans. But this didn't happen overnight. Let's walk through the major steps that actually brought us from simple machines to tools like ChatGPT that actually talk and create with us on a daily basis. We started from machines just built to do basic math operators, such as addition, subtraction, division, and multiplication. These are basically known as mechanical calculators. Over time, we moved to something more complicated, known as a programmable machine. A programmable machine. And these programmable machines, um, were a step up from the mechanical calculator that we discussed earlier. They uh, could follow instructions to solve different problems over time. This was the first big step towards something that humans termed intelligence. And machines could now run logic, not just crunch numbers. The earliest AI worked by following rules written by humans. So, this same term intelligence, uh, was later used to kind of start the first forms of AI. This is called symbolic AI, and it is based on a rule-based system. So, for example, if you say, "I'm sad," the computer might respond with, "Why are you sad?" That's just following a pattern that humans give in real life. Humans respond to questions. These systems could fake smart behavior, but didn't actually understand anything. Now, the next big step, which happened more recently, is machine learning. And that essentially is letting computers learn from data. And this this became a huge shift. Instead of writing rules, we let computers learn from the data that we feed it. It's no longer manual. We show the AI lots of examples, and it figures out patterns by itself. Now, the machine isn't just memorizing. It's learning. This has unlocked new features in the 21st century, such as image recognition, voice assistance, and personalized recommendations. The next step, which brought us closer to the AI that we know today, is something that we term deep learning. And deep learning, uh, is essentially a really big neural network. And we'll discuss more what a neural network is in later lessons. But essentially, with faster computers and more data, we built deep learning systems, um, or big networks modeled after how our brain works. These models got really good at translating languages, playing games, identifying objects in photos, and instead of programming it to do something, you give it massive amounts of data, and it figures out how to do it. So, kind of building upon machine learning. So, that brings us to an AI that we all know today, known as generative AI, or Gen AI. And this type of AI is the one that we're most familiar with. It is something that we see in uh, AI models such as ChatGPT, Google's Gemini, and much more. But what is generative AI? Well, using ChatGPT as an example, uh, it is essentially a model that's trained on huge amounts of data and text so that it can answer questions, write stories, summarize articles, and explain math or code. Use cases which we have seen uh, skyrocket in the past few years. But it doesn't just repeat. It generates new responses based on what you type. So, what does that mean for today's world? Today, AI is everywhere, in the app that you're using to watch this course, your car, your camera, your classroom. It can be helpful, but we also have to be careful. Is the AI fair? Does it spread false information? How do we keep it safe? These are the next big questions and something that we're going to be talking about later on.`,
+    url: "/video1.mp4",
   },
   {
     type: "video",
@@ -22,13 +26,53 @@ export const content = [
     videoTitle: "Introduction to LLMs: 'AI that understands words'",
     audience: "All ages",
     topicType: "topic",
+    transcript: `In the last couple of videos, we kind of learned uh a little bit about artificial intelligence and the basic definition, understanding of it. And in today's video, we're going to be learning about language models, specifically large language models. But let's start off simple. What even is a language model? Well, a language model is a kind of AI that learns how words go together. Kind of like when you play the game Mad Libs and you can guess the next word in a sentence based on human context. For example, if you have the sentence here saying, The cat sat on the blank, and you want to predict what comes next in the sentence, some users may say mat, others may say rug, and others may even say floor. Now, there's no technical wrong answer here since these are all valid answers based on human context. This is exactly what a large language model does. It predicts what comes next in a sentence based on the patterns that humans feed it. So, why are they called large language models? What does large have to do with anything? Well, um because these LLMs are trained on huge amounts of data, such as books, websites, articles, conversations, and even code, uh that encapsulates billions of words in uh in the human language. It learns patterns and how humans use language and it doesn't just memorize facts. So, for instance, an LLM's response can be based on many things. Um if the LLM is answering a user prompt a question, it may take part of its response from https://www.google.com/search?q=google.com, part of its response from a book it read online, and part of its response from an article. These three different sources here for uh combine to form one response which the LLM is able to output. Well, how does an LLM actually learn this data? Well, it doesn't get taught with flashcards or lectures like humans do, but instead, they learn by reading a lot. Uh, like I said, they are using these different sources that it finds online and that are fed to it to output a valid response for a user to see. Over time, however, these LLMs do build a deeper understanding of grammar, meaning, tone, and even context just because of the way the human language is functioned. That's why uh when you are talking to an LLM or using LLMs in your daily life, you might notice how it can connect ideas across paragraphs, across conversations, and kind of build upon uh the last thought that I gave it due to um the conversation that you're having with it. So, can these LLMs really think? Well, the short answer is not really. An LLM doesn't understand like a human. It doesn't have beliefs or feelings or emotions. It doesn't even know the world that we live in. All it understands is the language patterns which humans feed it and the mass amounts of data which it processes. It's really good at sounding smart because it's seen so many examples of smart writing from Shakespeare to other authors. Now, what can LLMs actually do? Well, because it understands text, an LLM can answer questions, write emails, write stories, translate languages, explain math or science, help you code, or even talk like a pirate if you ask it to. It's like a super fast reader and writer rolled into one. Now, you've probably used an LLM if you've tried any of these following examples which I'm going to give. ChatGPT, powered by OpenAI. Gemini, powered by Google. Claude, uh powered by Anthropic, and so much more. Now, you may have noticed too on these websites that there are different models of LLMs or AI that are provided to you. For example, for Google's Gemini, we have a Flash model and a Pro model. Now, it's recommended uh based on how these models are trained that the Flash model be used for simpler tasks, whereas the Pro model is used for deeper research. And the level of training that an LLM or AI model is received is dependent on the amount of data that it's given and the amount of power that it has to outsource information from the web. Now, why are LLMs useful and how can they be useful in our world? Well, if you look around, LLMs are currently being used in education for tutors or writing helpers, businesses, healthcare, and software. It's not perfect, but it's getting smarter every year. In fact, the site which you're using to watch this video actually has an LLM built in. Now, just reviewing everything that we've learned today, uh, what is an LLM? Well, we discussed that an LLM is an AI that understands words, uh, well enough to have a conversation, not because it's alive, but rather because it's trained on a world full of language. It's not magic, it's really just dependent on math, data, and patterns which humans feed it. And it might be one of the most powerful tools ever made in our society. In later videos, we're going to be discussing um more technical aspects of LLMs and how they actually are created. In addition, we're going to be looking at some specific models and APIs which we can use to build our own applications using the power of these LLMs.`,
+    url: "/video2.mp4",
   },
   {
     type: "activity",
     module: 1,
-    videoTitle: "Activity: Interactive game: 'Can AI guess what I'm thinking?' using a chatbot.",
+    videoTitle: "Activity: Meet Spark",
     audience: "All ages",
     topicType: "activity",
+    markdown: `
+
+
+## What You’ll Do
+
+In this activity, you'll meet **Spark**, your AI companion. Spark can help you learn, brainstorm ideas, quiz yourself, or just explore concepts in a fun and interactive way.
+
+Use the **chat sidebar on the right** to try things like:
+
+- Asking Spark a question  
+- Requesting a visual explanation  
+- Taking a quick quiz  
+- Getting a summary of this topic  
+
+
+
+## Suggested Prompts
+
+Try these to get started:
+
+- “Explain what Spark is in one sentence.”  
+- “Help me visualize how an LLM works.”  
+- “Give me a 3-question quiz on this activity.”  
+- “Summarize the key idea of this module.”  
+
+
+
+## After This Activity, You Should Be Able To:
+
+- Understand what Spark (your AI) can do.  
+- Know how to ask helpful questions.  
+- Use AI tools to support your learning.  
+
+
+
+---
+
+**Next Step:** Click the **Next ➝** button when you're ready to continue!`,
   },
 
   // Module 2
@@ -36,215 +80,194 @@ export const content = [
     type: "video",
     module: 2,
     videoTitle: "What is a model?",
-    audience: "Middle and High School (simplified parallel track for Elementary)",
-    duration: "1.5 hours",
+    audience: "all ages",
     topicType: "topic",
+    transcript: `"Hey everyone, in this video we're going to be exploring what is a model. What is a model? So, let's explore how AI thinks. So, what does a model even mean? So, in everyday life, a model can mean, you know, a lot of things. It can mean like from fashion models to a toy model of a plane, or a model of the solar system, and as you guys know, you're probably pretty familiar with this as you're learning like the solar system uh in your science class. But in AI, in AI, a model is different. A model is a mathematical program that helps a computer make predictions or decisions based on patterns and data. So, let's go one step at a time. So, it helps make, it's relates to computers. And it helps these computers make predictions or decisions based on patterns in the data that you're feeding the model. So, a model is like an AI is like a smart guessing machine. That's kind of like what you could think of it. It doesn't necessarily memorize all the data that you give it. It just learns the patterns based on what you're feeding it, and then it uses those uh to help figure out new things. So, you can think of this as a guessing machine. So, let's think of a model like a brain made of math. So, let's just like imagine like what a robot brain would look like for a second. But instead of neurons, uh in a typical human brain, it uses these following things. It uses numbers. It uses rules that it relies on. And most importantly, it uses patterns in the data. And it also uses uh probabilities, which is more advanced and we won't be covering it. So, like a like a brain, the model gets trained using lots of examples, like how you get trained in like your math class for example, when you're learning uh new concepts. So, once it's trained, it can say something like, based on what I've seen before, here's what I think this is. So, that's kind of like how a model thinks uh when it's being fed data. So, if you show it a dog, for example, it won't necessarily say dog because it it knows what a dog is. It says dog because it's seen tons of pictures of dogs and learned what features they usually have. So, it's not necessarily understanding what it's feeding you. It's just extracting what it sees from the data that you feed it. Data being fed. So, how does a model learn? Well, let's break down the three steps that a model uses in order to be trained. So, first, the first step, the first and most important step, is to give it some input. So, for example, the model likes the model likes examples that you give it. Uh for example, uh you can you can give it like pictures of cats, if you want it to learn the different types of cats that there are, or dogs, of cats / dogs. The second step that the model takes in order to understand the the input that we're feeding it is that it learns patterns from this data. Uh, like for example, dogs have long ears, right? So, this could be one uh factor that can help differentiate uh between dogs and cats for the model because it's not being not necessarily uh being able to tell if it's a dog or cat based on face value, right? It has to be able to look for patterns inside of the data, uh in this case, is a picture. And the third step is it makes a prediction based on the patterns it found. Based on patterns. And after multiple uh rounds of training, the model can get really good at guessing. You you feed it thousands or millions of training data in order for it to get better at guessing. So, what does this all mean? If we're training a model, and over time it's getting better and better at guessing, does that mean eventually models can be perfect? Can models in AI be 100% accurate? Well, that's the short answer is no. Models are not 100% accurate. Like humans, we do make like models make mistakes as well. They might, like, for example, mix up similar things like a wolf versus a dog because they have similar features, such as long ears, that we were talking about earlier. And it can also get confused by weird data. Oops, weird data. And based on the weird data that it's given, it can give you silly answers that wouldn't necessarily make sense if a human was answering the question. For example, if it says like a if it gives you a picture of a wolf and it says, "Oh, this is a cat." Well, obviously, that's not necessarily correct, right? But the the most important thing to get out of this is the more high-quality data, high-quality data, uh that these models are seeing, they get smarter. Uh and that's why uh companies uh rely on training models and millions of examples. Like, for example, uh ChatGPT. ChatGPT is uh heavily reliant on the data that it's being given, and it's able to answer questions um based on the millions of examples that it's being fed. So,`,
+    url: "/Mod2Vid1.mp4",
   },
   {
     type: "video",
     module: 2,
     videoTitle: "Tokens, training data, and predictions",
-    audience: "Middle and High School (simplified parallel track for Elementary)",
+    audience: "all ages",
     topicType: "topic",
+    url: "/Mod2Vid2.mp4",
+    transcript: `So in the last video, we talked about what is a model in AI. So in this video, we're going to be building off of that and going to be talking about a couple of more things related to that. So let's first start with this thing called a token. So what is a token? So when a computer reads text, it doesn't understand whole sentences the way we do, right? Uh like how we were talking about uh models taking in data and recognizing patterns. They don't actually understand uh what's being fed. They just have to extract um data from uh what we feed it. So instead, it breaks down uh things into smaller parts called tokens. You can think of these tokens like LEGO bricks. Each one is a piece of something bigger, like a word, a letter, or even part of a word. So, for example, if we have a sentence that we feed in a model called, The robot runs fast. Let's say this is the sentence we feed into our model. So, the way the computer works is if it if it takes in this uh block of text, it would break it down into separate tokens, like for example, we break it down into each word. So now, uh with the way the computers use it is the following. It can see it in each word like, the, robot, runs, fast. So, this is an example of a token. Each of these words here in this list of uh words in the sentence are called tokens. So, this is a token. Depending on the model, tokens might uh look something differently. Uh for example, it can be whole words uh that are part of a whole sentence, or it can be part of words. For example, if we have the word unbelievable, unbelievable, the tokens for this word can be something like this. So, we can have something like, un, uh that's incomplete. Uh, believe, without the E, like that. And able. So, a computer can split up tokens uh within just one word itself, and it can be part of a word too. So, this would also be an example of a token. So, why do computers do this? Well, computers can only work with numbers, right? Not words. Each token gets turned into a number before going into the model itself. So, that is uh a basic overview of tokens. So now, the next thing we're going to talk about is training data. And we touched upon this a little bit in the last uh video. So, what is training data? So, training data is information we can give a model to help it learn. If you want to teach an AI to understand English, you don't just tell it, you should know English now, right? You feed it thousands or millions of examples of English sentences. Uh examples from, you know, from books, like that. Uh websites, uh found on the web. Uh conversations on text, or even emails. And sometimes, even code. It's my drawing of a laptop right there. So, all of this becomes training data. The model doesn't memorize the exact text, but instead, it looks at how the words and tokens usually appear together. It learns stuff like, for example, if you see peanut butter, the model can predict, based on seeing peanut butter, that the next word in a sentence containing this uh phrase can be jelly, like a peanut butter and jelly sandwich, right? That's a pretty common term and a pretty common meal. So, that's kind of what training data is. So now, let's see uh what a prediction is, and how we can make predictions based on this training data. A prediction. So, this is like the most uh interesting part, I would say, of um a model itself uh once it takes in the data, splits it into its tokens, and is given multiple pieces of training data over time. So, once the model is trained, it can take new input and make a prediction about what comes next. This is what happens when you type in, uh for example, into ChatGPT or other AIs. You might type, "Once upon a time, there was a dragon who," and the model will predict the next tokens like, "lived in a cave and guarded treasure." It's not writing from memory. It's making the most likely guess based on its training. Each prediction happens one token at a time, and the model chooses the next token based on these two things. It chooses the next token based on what it was just fed or what came before. What came before? And what has uh what it's seen during training. What it's seen already. So, it's like trying to draw or draw conclusions uh to finish a sentence based on context clues. So, it can be something like, for example, if we have, "The astronaut floated in the," the model would first take in this uh block of text, and then it's going to start thinking. And it can provide multiple outputs uh to complete the sentence, like, "The astronaut floated in the," you know, "space" because astronauts go to space. Or, it can do think of something like, it floated in the airlock. So, there's obviously multiple multiple ways to uh complete this sentence, but the model will choose uh based on what it's seen in the past and uh what it's seen already based on uh other training data to uh what it thinks is the best possible way to complete the sentence. So, to sum things up, we can see how this all fits together, right? So, we first, when the model is fed data, it breaks the input into tokens. And then the tokens are sent into the model for training. And the model uses these tokens to make patterns or recognize patterns it's learned from the training data. And based on the patterns it's able to recognize, it's able to predict. It's able to predict the next best token. So, that's essentially how AI is able to communicate with us uh based on user input.`,
   },
   {
     type: "video",
     module: 2,
     videoTitle: "Neural networks (simplified)",
-    audience: "Middle and High School (simplified parallel track for Elementary)",
+    audience: "all ages",
     topicType: "topic",
+    url: "/Mod2Vid3.mp4",
+    transcript: `So, in the last video, we talked about how the specific steps the model is able to take in order to break down data, uh is able to make predictions based off of those, uh training data. So now, uh in this video, we're going to talk about neural networks. And it sounds uh pretty uh complicated, but it's actually just a smart system made of simple parts working together. So, let's just break it down. So, to start with, what does neural mean? Well, if we look at the stem from neural, neural contains N-E-U-R-A-L, and that is also contained in the word neurons, right? Like neurons in your brain. So, that's exactly what it means actually. Neural comes from the word neurons, tiny cells in your brain that pass information. Similarly, AI tries to copy this idea with something called a neural network. But instead of brain cells, it uses these things. It uses numbers, numbers, it uses math, and it uses connections. The AI, uh, unlike a human, it's not alive. It's just learning patterns using math. So, what consists, uh, or what, uh, constitutes a neural network? Like, what is it made of? Well, a neural network is just a system of layers. So, you can think of it as having multiple layers. So, the first layer that a neural network can contain is the input layer. This is where the data goes. Where data goes. The second layer that a neural network has is called hidden layers. And you might think to yourself, 'Well, what does it mean to be hidden?' So, essentially, uh, this is where all the processing happens. Like, you can think of it is all the magic goes down here. The computer behind the scenes is able to recognize patterns using math and numbers. It's something that, uh, us humans are, uh, blinded from because it gets pretty complicated. So, the final layer is the output layer, and this is what, uh, us humans see, uh, in everyday life. It's where we get the result. Where we get the result. So, like each neuron in a layer passes a number to the next layer. Each connection has a weight, a number that says how strong that connection is. And some connections are more important than others. So, what do neural networks actually do? It pretty much has a similar job to like what AI models do. It tries to find patterns in the data. For example, let's say you're training it to recognize animals, and you give it the following properties: You give it height, um, the number of legs, oops, number of legs. You give it, uh, does it swim or not? And whether it flies. So, the network uses these inputs to guess, 'Is this, for example, a cat, dog, or duck?' It's not memorizing what you give it. It's learning the relationships between these inputs and outcomes. So, inputs are directly tied to outputs / outcomes. Because at first, like, the network doesn't know anything, right? It's supposed to guess randomly, uh, based on the data you feed it. But the more data that you feed it, the more accurately it's able to guess. Uh, this happens thousands or millions of times until the model gets really good at guessing. You, you feed it thousands or millions of training data in order for it to get better at guessing. So, what does this all mean? Why use a neural network? Uh, why use a network? Neural network, NN. Doesn't this sound pretty similar to a model? Well, neural networks are great when the rules are too complex for the program to handle by itself. So, when rules get complicated, complicated. Or if you want the system to learn by itself, uh, learn by itself. And if there's lots and lots of data. Some examples of neural networks that you see, uh, in everyday life are, for example, uh, like we said last time, uh, speech recognition from voice assistance, uh, like Siri or Alexa. Siri, Alexa. Uh, or like Face ID, like on your iPhone. Uh, when you're trying to unlock your, uh, phone, instead of using your password, you use Face ID. Uh, and language generation, like ChatGPT. As ChatGPT is able to create, uh, text or a response for the user. For the user. And these neural networks are powerful because they can find patterns that humans, uh, themselves might miss because they're being, uh, they're being given so much data. And computers are generally more accurate, uh, and more, uh, reliable sometimes than humans when it comes to recognizing patterns, uh, and recognizing like the small features that you see, uh, when you're given thousands of examples. But like all models, neural networks are not perfect. Because for one, they need lots of data. And sometimes, even when it's given lots of this data, it's sometimes not able to guess accurately. And based on that, it can make weird mistakes. And they, like models, don't actually understand, uh, certain things the way we do. So, understanding tends to be an issue sometimes. It's like, it relies on patterns, uh, instead of like actually looking at it at face value. So, even though, uh, neural networks might seem smart, they don't have like feelings or common sense like humans, but they are amazing tools, but they're just not human minds.`,
   },
   {
     type: "video",
     module: 2,
     videoTitle: "Why LLMs sometimes get things wrong",
-    audience: "Middle and High School (simplified parallel track for Elementary)",
+    audience: "all ages",
     topicType: "topic",
+    url: "/Mod2Vid4.mp4",
+    transcript: `You might have asked ChatGPT or another AI a question, and it's just gotten the answer wrong. And you think to yourself, 'Wait, like, why does this happen?' Or like, 'The math answer, like, makes no sense at all.' So, today we're going to be talking about uh why LLMs sometimes get things wrong. So, uh quick reminder, what is an LLM? Uh, as you already know, an LLM is a computer program that learns from text, tons and tons of text. So, it can predict what words should come next in a sentence. It's not looking things up. It's not even even fact-checking a book. It's using patterns that it learned to guess what sounds right. Uh, for example, if you give it an input, uh, 'What's 9 * 7?' The LLM will respond, for example, 'Oh, it's 63.' And this is a good match, right? Because 9 * 7 is 63. But what about uh a question that it's not able to answer, like, 'Who was the president of the moon in 1800?' Obviously, there's no president of the moon, right? But the LLM is trained in order to answer these type of questions based on previous data that it's already fed. So, it might answer with something like, you know, Abraham Lincoln, because Abraham Lincoln was the president of the United States in the 1800s. But even though this sounds like a smart answer, it's actually wrong. This is wrong. So, let's see why this is wrong. LLMs don't actually know what's true. Because the key idea is like, LLMs don't know facts. They only know patterns. So, this means that they can write like a smart person, but they don't understand what's actually real. They might say, 'Unicorns are found in the Amazon rainforest,' because the words 'unicorn,' 'found,' 'rainforest' sound like they fit together, right? But that doesn't mean it's actually true. LLMs are great at sounding right, but not at always being right. And when it's giving you wrong answers like that, that's called hallucinating. It's called hallucinating, or hallucination. So, they don't necessarily think like humans because what humans do is they ask questions, check their memory, and use logic and experience. But LLMs don't really think. Uh, they don't remember past chats unless they're in the same conversation, and they don't know uh if they're wrong. They generate one token at a time, uh tiny word chunks uh at a time, based on probability. Uh, like what we were talking earlier in the previous videos about tokens. So, sometimes, uh, based on that, they get things wrong. They invent things that don't exist. So, DNE. And this is what we're talking about, it's called hallucination when they do something like that. And they make up math steps that sound logical but aren't. Aren't logical. So, another way LLMs can be wrong is that the training data has problems itself. Like, LLMs learn from data, like websites, books, articles, written by people. But people aren't always right either, and not everything online is true. Because some stuff can be uh outdated, biased, and just like flat out wrong. So, flat out oops, flat out wrong. If the model sees a wrong fact a lot, it might think it's a common pattern and repeat this issue. And based on that, it can be pretty uh consistent with providing wrong answers. So, how do we avoid this? How can we maximize LLMs' potential in order to or in order for it to answer as many questions as right as possible? LLMs, for example, are great at uh special things, like writing stories, writing stories, explaining concepts, explaining concepts, brainstorming, and translating text, like they're chatting with a human. But they're not so great at solving things like like hard math, giving up-to-date facts, and being logical step by step. And most importantly, they're not good at making decisions that require judgment or real understanding. So, how can we use LLMs safely? So, like the good news is that you yourself are actually smarter than the AI, and in order to use these LLMs wisely, what you can do yourself is, you know, double-check your answers, look up things if they sound, you know, suspicious or just like wrong in general, or use real sources on the internet uh for facts and news. But the the most important thing to know is, AI should help you uh you can use AI to think uh and help you uh generate uh problems or uh brainstorm issues. But you shouldn't let it do all the thinking for you. You should uh ensure that uh you yourself are able to uh fact-check uh what it's giving you and uh ensure that you you yourself are getting the best information possible out of it.`,
+  },
+  {
+    type: "video",
+    module: 2,
+    videoTitle: "What is an API?",
+    audience: "Middle and High School",
+    topicType: "topic",
+    url: "/apivid.mp4",
+    transcript: "basic description of how APIs work",
   },
   {
     type: "activity",
     module: 2,
-    videoTitle: "Activity: Use a block-based demo (like Teachable Machine) to simulate token prediction.",
-    audience: "Middle and High School (simplified parallel track for Elementary)",
-    topicType: "activity",
-  },
-
-  // Module 3
-  {
-    type: "video",
-    module: 3,
-    videoTitle: "What is an API?",
-    audience: "Middle and High School",
-    duration: "1 hour",
-    topicType: "topic",
-  },
-  {
-    type: "video",
-    module: 3,
-    videoTitle: "Overview of OpenAI, Claude, Google Gemini, HuggingFace",
-    audience: "Middle and High School",
-    topicType: "topic",
-  },
-  {
-    type: "video",
-    module: 3,
-    videoTitle: "How to make a simple API call",
-    audience: "Middle and High School",
-    topicType: "topic",
-  },
-  {
-    type: "activity",
-    module: 3,
-    videoTitle: "Activity: Run a prompt via the OpenAI Playground or HuggingFace's inference widgets.",
-    audience: "Middle and High School",
+    videoTitle:
+      "Activity: Use a block-based demo (like Teachable Machine) to simulate token prediction.",
+    audience: "all ages",
     topicType: "activity",
   },
 
   // Module 4
   {
     type: "video",
-    module: 4,
+    module: 3,
     videoTitle: "What is a prompt?",
     audience: "All ages (adjusted by depth)",
-    duration: "1 hour",
     topicType: "topic",
+    url: "/Mod4Vid1.mp4",
+    transcript: `Let's say you walk up to a robot and say, "Write me a story about a dragon and skateboards." The robot thinks for a second, then writes something awesome. That sentence you gave it, that's called a prompt. Today we're going to be answering, what is a prompt and how does it help AI know what to do? So, what is a prompt? A prompt is the input you give to an AI model. So, it is input. It tells the model a couple of things. It tells it firstly, what you want and how you want it. And finally, sometimes, what format to use. So, sometimes, uh, format. It's like talking to a really smart assistant who needs clear directions. So, for example, a couple of prompts that you could be giving the model is, for example, make a make a poem about cheese pizza. And this is fed into the model and the model comes up with a response based on what you said. And it says something around the lines like, "Cheesy, melty, round delight," and then blah blah blah. Essentially, the AI replies based on the prompt you give it. So, here are a couple of other prompts that you could be asking AI. It can you can essentially ask it anything. But here are just a couple examples. One thing you can ask is, for example, what is a black hole? Or you can tell it something really creative. It doesn't even have to be real necessarily. It can be like, "Tell a funny story about a cat who became mayor." Obviously, this isn't true because a cat can't become mayor, but it's just a creative prompt and something that you can feed the AI in order for it to create a story. Or you can give it a more structured prompt, something that lists facts. For example, "List three facts about dolphins in bullet points." So, you can see that this is a more structured prompt because we're asking facts and we're asking the AI to format it in a specific way, to format their answer in bullet points. So, the more specific you give a prompt, the better the model can follow it. So, why do these all matter? Why do prompts matter? Well, LLMs, which we've been studying this entire course, they're smart, but they can't necessarily read your mind. They need good prompts to give good answers. A good prompt follows these three steps. A good prompt sets the topic. It gives instructions. instructions as in meaning, what you say, the model is able to understand clearly. And it can also might include examples. Examples that will give the model a better understanding of what the answer is supposed to be like. If your prompt is too vague, the model might guess wrong, and obviously you don't want that. So, you can think of prompts like as a skill. Like, think of it as like asking a question in just the right way and, for example, writing a recipe for the answer you want. So, it's just programming with plain language, and sometimes just changing a few words can give you very different results. For example, what I mean by that is, say you ask, "Explain gravity to a fifth grader" versus, "Explain gravity to a physics student." Obviously, these explanations are going to be very different because the level of understanding that a physics student has is much better than that of a fifth grader. So, the the answer that the AI model gives to the first prompt is going to be a lot more simplistic than the second one. Obviously, it's the same topic, but it's a different audience, and that's going to result in a different answer most of the time. Another thing you can do with prompts is you can chain them. chain. And you can build off of your prompt, and you can answer, you can ask the AI like it's a conversation. So, let's say your conversation is about volcanoes. And you're saying something like, "Tell me about volcanoes" to the AI model. volcanoes. And the AI gives some like sort of answer related to volcanoes. And you continue with this conversation, saying, "Now write a poem about it." So, write me a poem. about it. So, the AI writes you some sort of poem with some sort of rhyme scheme, something like that. And this is essentially called prompt chaining, because you're building off of what you're saying before, and the AI is able to answer these questions based on context clues and the past context that you gave it from the conversation. And it's super useful for creativity and learning.`,
   },
   {
     type: "video",
-    module: 4,
+    module: 3,
     videoTitle: "How to write better prompts",
     audience: "All ages (adjusted by depth)",
     topicType: "topic",
+    url: "/Mod4Vid2.mp4",
+    transcript: `You already know what a prompt is. It's what you tell the AI to get it to do something. But here's the secret. The better your prompts, the better the answer you'll get from the model. So today we're going to be learning how to write better prompts. So, to start with, here's an example of a bad prompt. So, this is bad. You don't want to do this. "Tell me stuff about history." So, you ask the AI something and you're asking it to tell you something about history. So, why is this bad? Well, this prompt is too vague. The model won't know what you're really looking for when you say, "Tell me about history," because it can be anything about history. There's so much things that happened in the past. So, here would be a better prompt to ask that's more specific and uh gets the point across of what you're trying to learn. So, a better prompt would be, "Summarize the causes of the American Rev." So, revolution, in three bullet points. Now the AI knows what you're talking about. The AI model is able to understand what you're asking for, and as a result, it's going to provide you a better answer. So, always be specific with your prompts. Another thing you need to know is you can give the model a role and it'll try to act like that. And this is especially useful if you're trying to learn certain concepts. Like, for example, what I mean by the role it takes on is, let's say you ask the AI model, "Act like a science teacher explaining gravity." Now, instead of just generically explaining how gravity works in physics, it's going to explain it in the in the role of a science teacher and like how you would learn it in school. And that's it's like a lot easier to learn like that. And that's something you can tell the AI if you just specify enough, like what you're asking for. Another example could be like, "Pretend you're a sports coach giving a pep talk." Now, if the AI model were to give you a pep talk, it would be pretty generic, and you wouldn't really feel the energy coming out of it. But now you're telling it to act like a sports coach who's usually more fired up and he's he knows how to get you motivated or he or she knows how to get you motivated. So, that's another important thing. If you tell them, if you tell them to phrase their answer in the perspective of someone else, it's easier for them to give you the answer that they want or that you want. One more example could be, "You are a game designer. Make a fun level idea." So, now that now the AI knows, "Okay, I need to think more creatively now because I'm in the perspective of a game designer, and their job is to make creative fun levels for people to use and play." So, what do we take away from this? When you give the AI a role, it changes how it talks and what it focuses on. So, another thing that we need to be uh considered about when we're feeding prompts to the AI is to make uh sure that there's more details in it. And more details makes your prompt stronger. So, for example, instead of saying something like, "Write a poem," you should add more details to this. Say something like, "Write a funny poem about a robot who learns how to dance." So, this is the key aspect of specificity we're talking about earlier. We're adding more details. We're saying, "Okay, instead of just writing a poem, it has to be funny. So there has to be some humor to it." And we're giving a subject to write about. We're saying, "About a robot who learns how to dance." So, this is obviously a much better prompt because the the model is going to give you a better response based on what you're asking it instead of just saying merely "write a poem." This is not as specific enough what you're asking. So, these details like help you guide the style, tone, and topic of what you're asking for. So, now we've come to format. And what I mean by this is, there's multiple ways that you can ask for a model to format their response uh back to you. And what some formats can include lists in comma separate like comma separated lists or any type of list. Or you can even format it in a paragraph. Let's say you want an example of how to write like some sort of essay and you want it to be in paragraphs instead of bullet points. Or you can ask it, "Want it explained by or want to explain to at a certain level." For example, "What want it explained to an elementary student," an elementary school student. The response that the AI gives you is going to be phrased in such a way where it's so simplistic and basic that even an elementary school student will be able to understand it because if you generically asked it that, it may not give you that same type of level of response. So, for example, one prompt that you can give it is, "Explain black holes in five simple sentences for a sixth-grade science class." So, now let's look at the level of detail in this prompt. If we merely just said "explain black holes," it would explain black holes in a way that is very sophisticated and detailed. But now we're asking it to explain it in five simple sentences. So, we're we're providing structure here because we want it in sentences. For a sixth-grade science class. So, we want it in the perspective of middle schoolers. So, it does these two things. It provides structure and perspective, and it also provides detail. And sometimes your first prompt that you feed it, may may not always be perfect and that's totally okay because what you want to do is you want to think like a scientist when you're answering, when you're feeding these prompts uh to the model. You want to try a prompt, look at the result, and if you don't get the answer that you were hoping for, you can change the wording and try it again. And this process is called iterating. It's a fancy word for trying different versions, because AI isn't just about getting answers that's fast. It's about learning how to ask better questions.`,
   },
   {
     type: "video",
-    module: 4,
+    module: 3,
     videoTitle: "Temperature, max tokens, and other parameters",
     audience: "All ages (adjusted by depth)",
     topicType: "topic",
+    url: "/Mod4Vid3.mp4",
+    transcript: `So you typed a prompt, the AI responds and it's pretty cool. But did you know that you can actually control how the AI responds to you? Today we're going to be learning about three important settings that you can adjust when using an AI like ChatGBT. So these three are called temperature, max tokens, and some other parameters. So let's get to it. So, firstly, what is temperature? So, temperature controls how random or creative the AI is. So, let's say let's just draw a thermometer to visualize this because temperature, when you think of temperature, you think of a thermometer and the water outside. So, let's say a low temperature, say like 0.1 or 0.2 equals more predictable, predictable, and overall just serious answers. Answers that get straight to the point and don't really waste time on uh things to make it more creative. And now let's say like a more higher temperature that's at 0.8 to one. And these these responses that the AI gives you are more creative. Creative, random, and overall just more fun. So, temperature is measured on a scale of 0 to one with the higher the temperature, the higher that it gets to, the closer that it gets to one, the more creative it becomes and the closer that it gets to zero, the more serious it is. So, you can think of it like low temp is playing it safe. playing your response safe. And high temp means the AI takes risks. Okay, so that is what's temperature about. So, now let's see what are max tokens. So, as we know, as we've learned before, tokens are like little pieces of text that AI uses to build sentences. And for example, a token can be a short word like the word cat or part of a longer word like let's say the word is jumping and the AI splits this word jumping into tokens. jump and ing. So, max tokens control how long the AI's response can be. So, if we have like a low number that we give the AI, let's say like five, then this will result in a short answer from the AI. But now let's say the max response is 100. It'll say something like, once upon a time, there was a dog. a dog who lived in a treehouse and loved to skateboard. So we can see that the larger the tokens, the more lengthy the response becomes and we can see that this sentence is complete because there's more details to it. So, let's see other parameters that we can control. These are more advanced and they're not as used uh they're not used as much as temperatures or max tokens, but they can still be used in order to control uh how the AI uh responds to you. So, one can be one one of these parameters is called top-p. So, this is also called nucleus sampling. So, it's kind of like temperature, but it works in a different way. Let's say the top P value is one. So, the AI as a result is going to consider considers all possible words that it can use in order to respond to our prompt. But now let's say our top P value reduces to 0.3. So, now the AI is only going to pick from the top 30% of likely next words. So, it takes the top 30% of words that would best complete uh its sentence uh in response to the prompt. So, essentially, it's deciding how many options the AI can choose from. So, if we have a smaller number like 0.1 or 0.2, something as close to zero or even 0.3, the smaller number number means that there's going to be a safer response and it's more likely that that the AI is accurate. But if we give a bigger number like like closer to one, then there's more variety that the AI can decide between and this makes the uh error in which it gets it wrong uh more likely. So, another parameter that we can control is called frequency penalty. frequency or it's also called presence penalty. penalty. So, these parameters control how often the AI repeats itself. So, it controls for repetition. So, if you want less repetition, you should add a frequent penalty. But if you want more variety and ideas, you should add a presence penalty. So, less rep frequent and more variety presence. And this is kind of self-explanatory in the name because as we see, frequency meaning uh how many there is of a thing. So, if there's more repetition, there's more frequency. And for presence, that's how many things are available. And we can say that more variety equals more presence. And you usually don't actually mess with these at first, but they can help make the AI's writing better at times. But most of the time you won't be controlling for them because most of the time we'll be controlling mainly for temperature and max tokens.`,
   },
   {
     type: "activity",
-    module: 4,
-    videoTitle: "Activity: Prompt tuning game: Who can get the LLM to make the best joke, poem, or riddle?",
+    componentType: "PromptTuner",
+    module: 3,
+    videoTitle:
+      "Activity: Prompt tuning game: Who can get the LLM to make the best joke, poem, or riddle?",
     audience: "All ages (adjusted by depth)",
     topicType: "activity",
   },
 
   // Module 5
-  {
-    type: "video",
-    module: 5,
-    videoTitle: "Use cases: summarization, chatbots, translation, tutoring, games",
-    audience: "Middle and High School",
-    duration: "2 hours",
-    topicType: "topic",
-  },
-  {
-    type: "video",
-    module: 5,
-    videoTitle: "Intro to HTML + JS or Python for AI apps",
-    audience: "Middle and High School",
-    topicType: "topic",
-  },
-  {
-    type: "project",
-    module: 5,
-    videoTitle: "Project: Chatbot using OpenAI API + HTML",
-    audience: "Middle and High School",
-    topicType: "project",
-  },
-  {
-    type: "project",
-    module: 5,
-    videoTitle: "Project: AI story generator or math tutor",
-    audience: "Middle and High School",
-    topicType: "project",
-  },
 
   // Module 6
   {
     type: "video",
-    module: 6,
+    module: 4,
     videoTitle: "Can AI lie?",
     audience: "All ages",
-    duration: "0.5 hour",
     topicType: "topic",
+    url: "/Mod6Vid1.mp4",
+    transcript: `Can AI lie? Let's break it down. So, the basic definition of a lie is when someone knows the truth and it purposely says something that does not match the actual answer, so it says something false. So, like, for example, if your friend broke a vase and said, "I don't know what happened," but he actually did know, that's a lie. So, a lie needs these two things. It needs to know the truth, and it needs to choose to say something else that's false. So, it needs these two things. So, does AI actually know the truth at all? The short answer is no. It does not. AI doesn't know things like humans do. It does not have beliefs, memories, or intentions. It doesn't understand what's true or false. It just predicts what words are likely to come next based on patterns and data. So, if it says something wrong, it's not lying. It's just guessing wrong. So, not lying, but guesses wrong. Okay. So, sometimes AI can sound like it's lying by providing a wrong answer. So, let's explore why. Sometimes AI does these things. It makes up facts. It can just give wrong info. And it can just sound something, it can just sound confident about something that's false. So, sound confident, but false. And when it makes up facts, we explored this earlier, but this is called hallucinating. When the AI hallucinates and does not know what it's actually talking about. So, for example, if you ask it something like, "Who is the president of Mars in 1800?" and the AI answers, "It was Commander Zorp." Well, there was no president of Mars, but AI saw a pattern. So, it saw, it saw this thing. It saw a question that you're asking, which was "who is the president of Mars?" And based on that, it's trained to provide an answer to this question, regardless of it's true or not. It's not that it actually, it's not that it's trying to lie. It's just that it's trying to follow the patterns that it's seen before. So, it filled in the blank with something that sounded right. It's not just a lie, it's just a bad guess. But, can AI actually be told to lie? So, can AI be told to lie? So, if, for example, if a person writes a prompt something like, "Pretend you're a sneaky robot. So, tell me a lie." The AI might say something untrue on purpose because it was told to. Even then, the AI isn't choosing to lie. It's following instructions from the prompt. The lie comes from the person, not the machine. And as we talked about earlier, AI can sometimes be told to be someone that they aren't. Like, for example, they can be told to be a science teacher when explaining concepts. Science teacher, or they can be told to be a coach when they're trying to motivate their team. Some of the examples we explored earlier. So, why does this matter? Why should we care if AI lies or not? Because AI can sometimes spread misinformation. So, spread misinformation. People might trust it too much. trust too much. When it's actually not true. And bad actors can use it to mislead others. Misleading other people. So, it's up to humans to use AI responsibly and to always think critically about what it says.`,
   },
   {
     type: "video",
-    module: 6,
+    module: 4,
     videoTitle: "Bias in AI and fairness",
     audience: "All ages",
     topicType: "topic",
+    url: "/Mod6Vid2.mp4",
+    transcript: `Imagine this, you ask an AI, "show me a picture of a doctor," and it only shows you like one type of gender in lab coats, whether it be men or women. So, what happens to the other gender of doctors or doctors of different backgrounds? This is a pretty big topic in AI, bias and fairness. So, let's break it down. So, in general, what do we define as bias? We tend to take the simple route, saying meaning unfairly towards one thing. So, unfair towards a thing or ignoring / excluding others. Humans can be biased, but guess what? AIs can also be biased too, even though it doesn't need to be or mean to be. So, AI learns by looking at huge piles of data like books, articles, websites, comments, and images as well. Does not matter what it is. But here's the thing, that data was made by people, and people sometimes include stereotypes, unfairness, or missing perspectives. So, if the AI sees more examples of, for example, one gender as CEOs, uh, or certain groups, certain groups always in the same role, it might lean towards those patterns, even if they're not fair or true. So, here are some real real life examples of bias in AI. So, you for example, you search up hairstyles and it only gives you images of one hair type. And another example can be in voice assistants where they're like, they don't always understand accents or different speech patterns. Or even in hiring tools. As AI trained, uh, on all job applicants might, uh, favor certain genders or names unfairly. AI doesn't mean to be unfair, but it can still act unfairly if the training data is biased. So, unfair if training data is biased. So, why is this a problem? If AI is biased, it can make unfair decisions, leave out important voices, repeat harmful stereotypes, and also affect people in real life. So, uh, make unfair decisions. I'll abbreviate this. Leave out voices. Uh, affect people in real life. And stereotypes. So, this is a big deal when AI is used for certain things like job interviews, school applications, loan approvals, or surveillance. So, we need to be careful. So, how do we fix it? We can make AI more fair by, for one, using more diverse data, not giving it just one type of data, more diverse data. Checking for bias during training. So, bias checked in training. Testing how AI behaves with different people and inputs. So, testing behavior with different people. And involving people from many backgrounds. So, include many backgrounds.`,
   },
   {
     type: "video",
-    module: 6,
+    module: 4,
     videoTitle: "Safe and responsible use of AI tools",
     audience: "All ages",
     topicType: "topic",
+    url: "/Mod6Vid3.mp4",
+    transcript: `Using AI appropriately. So, we must be responsible first. So, when we're using AI, we must use it to learn and not for harm, and we can't be using it to cheat, lie, or hurt other people. The main thing is using it honestly. And not using it to cheat on assignments or anything it may be. So, what can go wrong if we don't use it correctly and it's misused? So, this can lead to many real problems that we have. So, examples of unsafe or irresponsible AI use are like I just said, cheating on homework, or spreading false info that isn't true, but the AI gave you a generated response. So, spreading false info or giving personal info or misusing it, misusing it, uh, to pretend it's a real person. Because AI are not real people. It's just a machine. So, here are some rules for using AI responsibly. So, one, uh, always be honest with what you're, uh, inputting into the machine. Uh, protect privacy. So, never give it like your personal info, like your full name or like where you go to school or where you live. Uh, check the facts. Uh, sometimes they can generate wrong, uh, facts or ideas that you ask them based on a prompt. So, always double check these facts and use real sources when you're trying to check them. Uh, and don't use it to make fun of other people. Um, and last thing is, think before sharing. So, um, make sure that it's the the info you're trying to share is appropriate and respectful, and it's not, uh, anything that's falsified or wrong. So, when you're unsure to ask, uh, about something AI says or something makes you uncomfortable, uh, you should ask, uh, someone that you can trust and ensure that these things, uh, aren't true.`,
   },
   {
     type: "activity",
-    module: 6,
+    module: 4,
     videoTitle: "Activity: Group discussion: Should AI do your homework?",
     audience: "All ages",
     topicType: "activity",
   },
 
-  // Module 7
   {
-    type: "video",
-    module: 7,
-    videoTitle: "Using AI to make art, music, and stories",
-    audience: "All ages",
-    duration: "1 hour",
-    topicType: "topic",
-  },
-  {
-    type: "video",
-    module: 7,
-    videoTitle: "Image generation (DALL·E, Craiyon)",
-    audience: "All ages",
-    topicType: "topic",
-  },
-  {
-    type: "project",
-    module: 7,
-    videoTitle: "Project: Create a story with images using ChatGPT + DALL·E",
-    audience: "All ages",
-    topicType: "project",
-  },
-  {
-    type: "project",
-    module: 7,
-    videoTitle: "Project: AI comic strip or podcast idea generator",
-    audience: "All ages",
-    topicType: "project",
-  },
-
-  // Module 8
-  {
-    type: "project",
-    module: 8,
+    type: "activity",
+    module: 5,
     videoTitle: "Final Project: Build a mini AI tutor or helper app",
     audience: "Middle and High School",
-    duration: "2–3 hours",
-    topicType: "project",
-  },
-  {
-    type: "project",
-    module: 8,
-    videoTitle: "Final Project: Create an AI-powered blog post writer",
-    audience: "Middle and High School",
-    topicType: "project",
-  },
-  {
-    type: "project",
-    module: 8,
-    videoTitle: "Final Project: Design a chatbot that teaches math/Spanish/music",
-    audience: "Middle and High School",
-    topicType: "project",
+    topicType: "activity",
+    markdown: `
+
+# Final Project Instructions: No-Code Prompt-Based Application Using Google AI Studio
+
+## Overview
+
+For this final project, you will design and prototype an AI-powered application using [Google AI Studio](https://makersuite.google.com/). The goal is to demonstrate your understanding of prompt engineering, model behavior, and user experience design—without writing code.
+
+## Objectives
+
+- Apply prompt engineering techniques to develop a usable AI tool
+- Create an interactive experience powered by Google's Gemini model
+- Analyze and refine prompt outputs for clarity, relevance, and effectiveness
+- Present your work with a clear rationale and examples
+
+## Tools
+
+- [Google AI Studio](https://makersuite.google.com/) (no coding required)
+- Google Slides or Google Docs (for documenting or presenting your project)
+
+## Project Steps
+
+1. **Access Google AI Studio**  
+   Navigate to [https://makersuite.google.com](https://makersuite.google.com) and log in with a Google account.
+
+2. **Start a New Prompt Project**  
+   Click “Start a new prompt” to open the editing interface.
+
+3. **Set a System Prompt**  
+   In the system prompt field, define the behavior or personality of the AI. For example:
+   - "You are a helpful and friendly science tutor who explains concepts using real-world examples."
+   - "You are a mental wellness coach that provides journaling prompts and reflection questions."
+
+4. **Design User Interactions**  
+   In the user prompt area, simulate the types of inputs a user would provide. Think through various use cases and how the AI should respond.  
+   Examples:
+   - "Explain photosynthesis for a 9th-grade student."
+   - "Help me revise this paragraph to sound more confident."
+
+5. **Test and Refine**  
+   Experiment with different instructions and input variations. Use features like:
+   - Adding examples (few-shot prompting)
+   - Iterating on language, tone, and constraints
+
+## Suggested Project Ideas
+
+- A chatbot that simulates a historical figure or fictional character
+- A study companion that explains and quizzes on uploaded material
+- A writing assistant that revises, critiques, or generates text
+- A soft-skills coach (e.g., emotional intelligence, leadership)
+- A cultural translator that explains idioms or traditions across cultures
+
+## Resources
+
+- Google AI Studio: [https://makersuite.google.com/](https://makersuite.google.com/)
+- Gemini Prompting Guide: [https://ai.google.dev/gemini-api/docs/ai-studio-quickstart#chat_example](https://ai.google.dev/gemini-api/docs/ai-studio-quickstart#chat_example)
+    `,
   },
 ];

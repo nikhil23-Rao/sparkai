@@ -666,14 +666,15 @@ font-family: 'GFS Neohellenic', sans-serif;
   align-items: stretch;
   margin-top: auto;
   margin-bottom: 0.5rem;
-  min-height: 180px;
+  min-height: 320px; /* increased from 180px */
   max-width: 320px;
+  height: 100%; /* allow to fill parent */
 }
 
 .chatboxMessages {
-  flex: 1;
+  flex: 1 1 auto; /* allow to grow and fill space */
   min-height: 48px;
-  max-height: 120px;
+  max-height: none; /* remove fixed max-height */
   overflow-y: auto;
   margin-bottom: 0.7rem;
   display: flex;
