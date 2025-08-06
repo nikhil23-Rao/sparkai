@@ -145,7 +145,7 @@ export default function Home() {
                 alt="Team Member 2"
                 className={styles.teamImage}
               />
-              <h3 className={styles.teamName}>Vinay</h3>
+              <h3 className={styles.teamName}>Vinay Rao</h3>
               <p className={styles.teamRole}>Senior @Dougherty Valley</p>
               <p className={styles.teamDescription}>
                 Vinay began his coding journey in 6th grade, creating innovative
